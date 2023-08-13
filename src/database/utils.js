@@ -19,8 +19,32 @@ const saveDatabase = (newRecipe) => {
   fs.writeFileSync("./src/database/db.json", JSON.stringify(DB, null, 2), {
     encoding: "utf-8",
   });
-  
+
   return newRecipe;
 };
 
-module.exports = { getAllDatabase, saveDatabase };
+const updateOneDatabase = (updateId, updateRecipe) => {
+  console.log(updateRecipe);
+  const recipeIndex = DB.recipes.findIndex(
+    (recipe) => recipe.id == updateId
+  );
+
+  console.log(recipeIndex);
+  
+  if (recipeIndex === -1) {
+    throw new Error("Recipe not found");
+  }
+
+  DB.recipes[recipeIndex] = {
+    ...DB.recipes[recipeIndex],
+    ...updateRecipe,
+  };
+
+  fs.writeFileSync("./src/database/db.json", JSON.stringify(DB, null, 2), {
+    encoding: "utf-8",
+  });
+
+  return DB.recipes[recipeIndex];
+}
+
+module.exports = { getAllDatabase, saveDatabase, updateOneDatabase };

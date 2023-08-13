@@ -85,6 +85,19 @@
       ],
       "createdAt": "1691888607067",
       "updatedAt": "1691888607067"
+    },
+    {
+      "id": "b7e0a9ef-b622-4fac-a966-799984583384",
+      "name": "Salmón al horno",
+      "ingredients": [
+        "Salmon",
+        "limon"
+      ],
+      "instructions": [
+        "Coloque el salmón en una bandeja y condimente"
+      ],
+      "createdAt": "1691962314017",
+      "updatedAt": "8/13/2023, 10:58:37 PM"
     }
   ]
 }

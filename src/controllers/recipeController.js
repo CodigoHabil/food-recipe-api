@@ -10,7 +10,21 @@ const getAllRecipes = (req, res) => {
 };
 
 const getOneRecipe = (req, res) => {
-  res.send("Get an existing recipe");
+  const recipeId = req.params.recipeId;
+
+  if(!recipeId) {
+    res.status(400).send({status:"Bad Request	", msg:"Missing required information"});
+    return;
+  }
+
+  const recipe = RecipeService.getOneRecipe(recipeId);
+
+  if(!recipe) {
+    res.status(404).send({status:"Not Found", msg:"Recipe not found"});
+    return;
+  }
+
+  res.status(200).send({status: "OK", data: recipe})
 };
 
 const createNewRecipe = (req, res) => {
@@ -20,12 +34,9 @@ const createNewRecipe = (req, res) => {
   }
 
   const newRecipe = {
-    id: "63tbae02-c147-4f16-u63c-db8bd502b2d4",
     name: req.body.name,
     ingredients: req.body.ingredients,
     instructions: req.body.instructions,
-    createdAt: new Date().getTime().toString(),
-    updatedAt: new Date().getTime().toString(),
   }
 
   RecipeService.createNewRecipe(newRecipe);
@@ -34,7 +45,30 @@ const createNewRecipe = (req, res) => {
 };
 
 const updateOneRecipe = (req, res) => {
-  res.send("Update an existing recipe");
+  const recipeId = req.params.recipeId;
+  const recipe = RecipeService.getOneRecipe(recipeId);
+  if(!recipe) {
+    res.status(404).send({status:"Not Found", msg:"Recipe not found"});
+    return;
+  }
+
+  const current = req.body;
+  
+  const updated = {
+    ...recipe,
+    ...current,
+  };
+
+
+  const updatedRecipe = RecipeService.updateOneRecipe(recipeId, updated);
+
+  if(!updatedRecipe) {
+    res.status(404).send({status:"Not Found", msg:"Recipe not found"});
+    return;
+  }
+
+  res.status(200).send({status: "OK", data: updatedRecipe});
+  
 };
 
 const deleteOneRecipe = (req, res) => {

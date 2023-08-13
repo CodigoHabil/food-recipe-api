@@ -8,15 +8,15 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:recipeId", (req, res) => {
-  res.send("Get an existing recipe");
+  RecipeController.getOneRecipe(req, res);
 });
 
 router.post("/", (req, res) => {
-    RecipeController.createNewRecipe(req, res);
+  RecipeController.createNewRecipe(req, res);
 });
 
 router.patch("/:recipeId", (req, res) => {
-  res.send("Update an existing recipe");
+  RecipeController.updateOneRecipe(req, res);
 });
 
 router.delete("/:recipeId", (req, res) => {
