@@ -8,8 +8,8 @@ const getOneRecipe = () => {
   return;
 };
 
-const createNewRecipe = () => {
-  return;
+const createNewRecipe = (newRecipe) => {
+    return Recipe.createNewRecipe(newRecipe);
 };
 
 const updateOneRecipe = () => {

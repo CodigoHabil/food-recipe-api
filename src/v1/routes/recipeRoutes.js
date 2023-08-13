@@ -12,7 +12,7 @@ router.get("/:recipeId", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  res.send("Create a new recipe");
+    RecipeController.createNewRecipe(req, res);
 });
 
 router.patch("/:recipeId", (req, res) => {

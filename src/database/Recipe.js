@@ -1,7 +1,11 @@
-const DB = require("./db.json");
+const { saveDatabase, getAllDatabase } = require("./utils.js");
 
 const getAllRecipes = () => {
-  return DB.workouts;
+  return getAllDatabase();
 };
 
-module.exports = { getAllRecipes };
+const createNewRecipe = (newRecipe) => {
+  return saveDatabase(newRecipe);
+};
+
+module.exports = { getAllRecipes, createNewRecipe };
