@@ -75,18 +75,6 @@
       ]
     },
     {
-      "id": "63tbae02-c147-4f16-u63c-db8bd502b2d4",
-      "name": "Cebolla al atun",
-      "ingredients": [
-        "Orosuss"
-      ],
-      "instructions": [
-        "punchis punchis punchis punchis"
-      ],
-      "createdAt": "1691888607067",
-      "updatedAt": "1691888607067"
-    },
-    {
       "id": "b7e0a9ef-b622-4fac-a966-799984583384",
       "name": "Salmón al horno",
       "ingredients": [
@@ -98,6 +86,21 @@
       ],
       "createdAt": "1691962314017",
       "updatedAt": "8/13/2023, 10:58:37 PM"
+    },
+    {
+      "name": "Chrimp tacos",
+      "ingredients": [
+        "Chrimp",
+        "Tortilla",
+        "Avocado",
+        "jalapeños"
+      ],
+      "instructions": [
+        "Put all the ingredients into the taco."
+      ],
+      "id": "b89c836c-c7a5-4d37-bdbe-37e39cd80434",
+      "createdAt": "8/14/2023, 2:47:46 AM",
+      "updatedAt": "8/14/2023, 2:47:46 AM"
     }
   ]
 }

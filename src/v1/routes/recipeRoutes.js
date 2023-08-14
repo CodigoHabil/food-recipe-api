@@ -20,7 +20,7 @@ router.patch("/:recipeId", (req, res) => {
 });
 
 router.delete("/:recipeId", (req, res) => {
-  res.send("Delete an existing recipe");
+  RecipeController.deleteOneRecipe(req, res);
 });
 
 module.exports = router;

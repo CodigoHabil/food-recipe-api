@@ -29,8 +29,8 @@ const updateOneRecipe = (recipeId, updateRecipe) => {
   return Recipe.updateOneRecipe(recipeId, updateRecipe);
 };
 
-const deleteOneRecipe = () => {
-  return;
+const deleteOneRecipe = (recipeId) => {
+  Recipe.deleteOneRecipe(recipeId);
 };
 
 module.exports = {

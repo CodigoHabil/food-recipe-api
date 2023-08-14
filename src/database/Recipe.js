@@ -1,4 +1,4 @@
-const { saveDatabase, getAllDatabase, updateOneDatabase } = require("./utils.js");
+const { saveDatabase, getAllDatabase, updateOneDatabase, deleteOneDatabase } = require("./utils.js");
 
 const getAllRecipes = () => {
   return getAllDatabase();
@@ -16,4 +16,8 @@ const updateOneRecipe = (recipeId, updateRecipe) => {
   return updateOneDatabase(recipeId, updateRecipe);
 };
 
-module.exports = { getAllRecipes, createNewRecipe, getOneRecipe, updateOneRecipe };
+const deleteOneRecipe = (recipeId) => {
+  deleteOneDatabase(recipeId);
+};
+
+module.exports = { getAllRecipes, createNewRecipe, getOneRecipe, updateOneRecipe, deleteOneRecipe };
