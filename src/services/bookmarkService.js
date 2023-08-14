@@ -1,7 +1,16 @@
 const Bookmark = require("../database/Bookmark");
 const RecipeService = require("./recipeService");
-const BookmarkDto = require("../dto/BookmarkDto")
 const { v4: uuid } = require("uuid");
+
+class BookmarkDto {
+  constructor(bookmark, recipes) {
+    this.id = bookmark.id;
+    this.userId = bookmark.userId;
+    this.createdAt = bookmark?.createdAt;
+    this.updatedAt = bookmark?.updatedAt;
+    this.recipes = recipes;
+  }
+}
 
 
 const getAllByUserId = (userId) => {
