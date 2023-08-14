@@ -1,4 +1,26 @@
 {
+  "members": [
+    {
+      "id": "cb0f06a9-bcce-4525-89dc-5cfa5af6d231",
+      "name": "Juan",
+      "lastName": "Perez",
+      "email": "juanperez@gmail.com",
+      "password": "892193ea-af23-42c0-a27b-9639e2dd8a01"
+    }
+  ],
+  "bookmarks": [
+    {
+      "userId": "ace4be1d-c968-4042-8f36-fb27fd1850ff",
+      "recipesID": [
+        "61dbae02-c147-4e28-863c-db7bd402b2d6",
+        "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
+        "b89c836c-c7a5-4d37-bdbe-37e39cd80434"
+      ],
+      "id": "3faa80f5-0fb4-43ac-80e9-06b3d80f0282",
+      "createdAt": "2023-08-14T18:43:51.271Z",
+      "updatedAt": "2023-08-14T18:43:51.271Z"
+    }
+  ],
   "recipes": [
     {
       "id": "61dbae02-c147-4e28-863c-db7bd402b2d6",

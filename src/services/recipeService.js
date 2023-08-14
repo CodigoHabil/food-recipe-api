@@ -10,6 +10,10 @@ const getOneRecipe = (recipeId) => {
   return Recipe.getOneRecipe(recipeId);
 };
 
+const getRecipesById = (recipesID) => {
+    return Recipe.getRecipesByIds(recipesID);
+}
+
 const createNewRecipe = (newRecipe) => {
   newRecipe = {
     ...newRecipe,
@@ -39,4 +43,5 @@ module.exports = {
   createNewRecipe,
   updateOneRecipe,
   deleteOneRecipe,
+  getRecipesById
 };

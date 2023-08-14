@@ -1,7 +1,6 @@
 const fs = require("fs");
 
 const DB = require("./db.json");
-const { json } = require("express");
 
 const getAllDatabase = () => {
   return DB.recipes;
@@ -65,8 +64,9 @@ const save = (json) => {
       encoding: "utf-8",
     });
   } catch (error) {
+    console.log(error);
     throw new Error({ error:500, msg:"Error saving the database"});
   }
 }
 
-module.exports = { getAllDatabase, saveDatabase, updateOneDatabase, deleteOneDatabase };
+module.exports = { getAllDatabase, saveDatabase, updateOneDatabase, deleteOneDatabase, save };
