@@ -6,25 +6,22 @@ const getAllByUserId = (userId) => {
 };
 
 const createNewBookmark = (newBookmark) => {
-    console.log(newBookmark)
     const alreadyExists = DB.bookmarks.findIndex(
         (bookmark) => bookmark.userId === newBookmark.userId
     )
 
     if(alreadyExists !== -1) {
-        console.log("already exists", alreadyExists)
         DB.bookmarks[0] = newBookmark
-        console.log(DB.bookmarks)
-
     } else {
         DB.bookmarks.push(newBookmark)
     }
 
-
+    //console.log(DB.bookmarks)
+    
     save(DB)
+    const DBUpdated = require("./db.json");
+    console.log(DBUpdated)
 
-    console.log("new bookmark")
-    console.log(DB.bookmarks)
 
     return newBookmark
 }

@@ -10,15 +10,26 @@
   ],
   "bookmarks": [
     {
-      "userId": "ace4be1d-c968-4042-8f36-fb27fd1850ff",
+      "userId": "YYYYYY-c968-4042-8f36-fb27fd185WW",
       "recipesID": [
         "61dbae02-c147-4e28-863c-db7bd402b2d6",
         "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
         "b89c836c-c7a5-4d37-bdbe-37e39cd80434"
       ],
-      "id": "1",
-      "createdAt": "2023-08-14T18:43:51.271Z",
-      "updatedAt": "2023-08-14T18:43:51.271Z"
+      "id": "b1e87f32-a349-4b2e-96cb-a5c986db3548",
+      "createdAt": "2023-08-14T20:54:49.612Z",
+      "updatedAt": "2023-08-14T20:54:49.613Z"
+    },
+    {
+      "userId": "ace4be1d-c968-4042-8f36-fb27fd185WW",
+      "recipesID": [
+        "61dbae02-c147-4e28-863c-db7bd402b2d6",
+        "4a3d9aaa-608c-49a7-a004-66305ad4ab50",
+        "b89c836c-c7a5-4d37-bdbe-37e39cd80434"
+      ],
+      "id": "98ac8ce6-a117-434f-9c10-9ee6f0896ad9",
+      "createdAt": "2023-08-14T20:49:04.856Z",
+      "updatedAt": "2023-08-14T20:49:04.856Z"
     }
   ],
   "recipes": [

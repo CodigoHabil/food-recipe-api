@@ -23,12 +23,9 @@ const saveDatabase = (newRecipe) => {
 };
 
 const updateOneDatabase = (updateId, updateRecipe) => {
-  console.log(updateRecipe);
   const recipeIndex = DB.recipes.findIndex(
     (recipe) => recipe.id == updateId
   );
-
-  console.log(recipeIndex);
   
   if (recipeIndex === -1) {
     throw new Error("Recipe not found");
@@ -64,7 +61,6 @@ const save = (json) => {
       encoding: "utf-8",
     });
   } catch (error) {
-    console.log(error);
     throw new Error({ error:500, msg:"Error saving the database"});
   }
 }
