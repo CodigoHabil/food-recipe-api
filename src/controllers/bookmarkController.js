@@ -17,7 +17,7 @@ const getAllByUserId = async (req, res) => {
   } catch (error) {
     res
       .status(500)
-      .send({ status: "Internal Server Error", msg: "Something went wrong" });
+      .send({ status: "Internal Server Error", msg: "Something went wrong"});
   }
 };
 
@@ -40,5 +40,21 @@ const createNewBookmark = async (req, res) => {
     }
 }
 
+const deleteOneBookmark = async (req, res) => {
+    const bookmarkId = req.params.bookmarkId;
+    console.log(bookmarkId)
+    try {
+        BookmarkService.deleteOneBookmark(bookmarkId)
+        res.status(200).send({ status: "OK", msg: "Bookmark deleted" })
+    } catch (error) {
+        if(error.cause === 404) {
+            res.status(404).send({ status: "Not Found", msg: "Bookmark not found" })
+            return
+        }
+        res.status(500).send({ status: "Internal Server Error", msg: "Something went wrong",})
+    }
+    
+}
 
-module.exports = { getAllByUserId, getAllBookmarks, createNewBookmark };
+
+module.exports = { getAllByUserId, getAllBookmarks, createNewBookmark, deleteOneBookmark };

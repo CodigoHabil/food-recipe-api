@@ -6,6 +6,11 @@ const { v4: uuid } = require("uuid");
 
 const getAllByUserId = (userId) => {
   const bookmark = Bookmark.getAllByUserId(userId)
+
+  if(!bookmark) {
+    return []  
+  }
+
   const recipesID = bookmark.recipesID
 
   const recipes = RecipeService.getRecipesById(recipesID)
@@ -30,12 +35,7 @@ const createNewBookmark = (newBookmark) => {
 }
 
 const deleteOneBookmark = (bookmarkId) => {
-  const bookmarks = Bookmark.getAllByUserId(bookmarkId.userId)
-  const recipesID = bookmarks.recipesID
-
-  const recipes = RecipeService.getRecipesById(recipesID)
-
-  return new BookmarkDto(bookmarks, recipes)
+  return Bookmark.deleteOneBookmark(bookmarkId)
 };
 
 

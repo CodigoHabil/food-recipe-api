@@ -35,7 +35,7 @@ const deleteOneBookmark = (bookmarkId) => {
     );
 
     if (bookmarkIndex === -1) {
-        throw new Error("Bookmark not found");
+        throw new Error("Bookmark not found", {cause: 404});
     }
 
     DB.bookmarks.splice(bookmarkIndex, 1);
@@ -45,4 +45,4 @@ const deleteOneBookmark = (bookmarkId) => {
 }   
 
 
-module.exports = { getAllByUserId, createNewBookmark };
+module.exports = { getAllByUserId, createNewBookmark, deleteOneBookmark };
