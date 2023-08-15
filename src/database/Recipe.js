@@ -20,8 +20,6 @@ const getAllRecipes = (queryFilters) => {
     allRecipes = allRecipes.slice(offset, offset + 10);
   }
 
-
-
   return allRecipes;
 
 };
