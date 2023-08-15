@@ -1,9 +1,12 @@
 const express = require("express");
 const router = express.Router();
 
+const apicache = require("apicache");
 const RecipeController = require("../../controllers/recipeController");
 
-router.get("/", (req, res) => {
+const cache = apicache.middleware;
+
+router.get("/", cache("2 minutes") , (req, res) => {
   RecipeController.getAllRecipes(req, res);
 });
 
