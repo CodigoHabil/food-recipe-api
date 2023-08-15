@@ -1,22 +1,16 @@
-let mongoose = require('mongoose');
+const { MongoClient } = require("mongodb");
 
-const server = '127.0.0.1:27017'; // REPLACE WITH YOUR DB SERVER
-const database = 'fcc-Mail';      // REPLACE WITH YOUR DB NAME
+const connectionString = process.env.ATLAS_URI || "";
 
-class Database {
-  constructor() {
-    this._connect()
-  }
-  
-_connect() {
-     mongoose.connect(`mongodb://${server}/${database}`)
-       .then(() => {
-         console.log('Database connection successful')
-       })
-       .catch(err => {
-         console.error('Database connection error')
-       })
-  }
+const client = new MongoClient(connectionString);
+
+let conn;
+try {
+  conn = await client.connect();
+} catch(e) {
+  console.error(e);
 }
 
-module.exports = new Database()
+let db = conn.db("sample_training");
+
+module.exports = db;
