@@ -1,7 +1,29 @@
 const { saveDatabase, getAllDatabase, updateOneDatabase, deleteOneDatabase } = require("./utils.js");
 
-const getAllRecipes = () => {
-  return getAllDatabase();
+const getAllRecipes = (queryFilters) => {
+  const { name, ingredients, length, page } = queryFilters;
+  let allRecipes = getAllDatabase();
+
+  if (name) {
+    allRecipes = allRecipes.filter((recipe) => recipe.name.toLowerCase().includes(name.toLowerCase()));
+  }
+
+  if (ingredients) {
+    allRecipes = allRecipes.filter(recipe => recipe.ingredients.includes(ingredients))
+  }
+  if (length) {
+    allRecipes = allRecipes.slice(0, length);
+  }
+
+  if (page) {
+    const offset = (page - 1) * 10;
+    allRecipes = allRecipes.slice(offset, offset + 10);
+  }
+
+
+
+  return allRecipes;
+
 };
 
 const createNewRecipe = (newRecipe) => {
@@ -13,7 +35,6 @@ const getOneRecipe = (recipeId) => {
 };
 
 const getRecipesByIds = (recipesID) => {
-  console.log(recipesID);
   return getAllDatabase().filter((recipe) => recipesID.includes(recipe.id));
 };
 

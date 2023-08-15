@@ -2,8 +2,8 @@ const { v4: uuid } = require("uuid");
 
 const Recipe = require("../database/Recipe");
 
-const getAllRecipes = () => {
-  return Recipe.getAllRecipes();
+const getAllRecipes = (queryFilters) => {
+  return Recipe.getAllRecipes(queryFilters);
 };
 
 const getOneRecipe = (recipeId) => {

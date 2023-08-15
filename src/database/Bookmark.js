@@ -15,8 +15,6 @@ const createNewBookmark = (newBookmark) => {
     } else {
         DB.bookmarks.push(newBookmark)
     }
-
-    //console.log(DB.bookmarks)
     
     save(DB)
     const DBUpdated = require("./db.json");
@@ -32,7 +30,10 @@ const deleteOneBookmark = (bookmarkId) => {
     );
 
     if (bookmarkIndex === -1) {
-        throw new Error("Bookmark not found", {cause: 404});
+        throw {
+            message: "Bookmark not found",
+            status: 404
+        }
     }
 
     DB.bookmarks.splice(bookmarkIndex, 1);

@@ -1,8 +1,13 @@
 const RecipeService = require("../services/recipeService");
 
 const getAllRecipes = (req, res) => {
+
+  const { length, name, ingredients, instructions, page } = req.query;
+  
   try {
-    const allRecipes = RecipeService.getAllRecipes();
+    const allRecipes = RecipeService.getAllRecipes(
+      { length, name, ingredients, instructions, page }
+    );
 
     if (!allRecipes) {
       res.status(404).send("No recipes found");
@@ -11,6 +16,7 @@ const getAllRecipes = (req, res) => {
 
     res.json({ status: "OK", data: allRecipes });
   } catch (error) {
+    console.log(error);
     res
       .status(500)
       .send({ status: "Internal Server Error", msg: "Something went wrong" });

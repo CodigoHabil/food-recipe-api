@@ -61,7 +61,7 @@ const save = (json) => {
       encoding: "utf-8",
     });
   } catch (error) {
-    throw new Error({ error:500, msg:"Error saving the database"});
+    throw new { error: 500, message:"Error saving the database" };
   }
 }
 
